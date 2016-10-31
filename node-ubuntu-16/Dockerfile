@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 ENV container=docker
 
 RUN apt-get update \
-  && apt-get install -y libdbus-1-3 libnih-dbus1 sudo software-properties-common ifupdown \
+  && apt-get install -y libdbus-1-3 libnih-dbus1 sudo software-properties-common ifupdown python \
 
   # install ssh
   && apt-get install -y openssh-server \
