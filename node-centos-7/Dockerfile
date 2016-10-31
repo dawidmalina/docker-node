@@ -5,7 +5,7 @@ ENV container=docker
 RUN yum install -y epel-release sudo \
 
   # install ssh
-  && yum install -y openssh-server which \
+  && yum install -y openssh-server which openssh-clients \
   && echo 'root:root123' | chpasswd \
   && sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
   && systemctl enable sshd \
