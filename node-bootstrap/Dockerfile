@@ -7,7 +7,7 @@ RUN apt-get update \
   && curl -L https://repo.saltstack.com/apt/ubuntu/14.04/amd64/archive/${SALT_VERSION}/SALTSTACK-GPG-KEY.pub | apt-key add - \
   && echo "deb http://repo.saltstack.com/apt/ubuntu/14.04/amd64/archive/${SALT_VERSION} trusty main" > /etc/apt/sources.list.d/saltstack.list \
   && apt-get update \
-  && apt-get install -y sudo software-properties-common \
+  && apt-get install -y sudo software-properties-common openssh-client \
   && apt-get install -y salt-ssh=${SALT_VERSION}* \
 
   # cleanup
