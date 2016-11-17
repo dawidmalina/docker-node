@@ -25,5 +25,7 @@ RUN echo 'APT::Install-Recommends "0"; \n\
   && apt-get -y autoremove \
   && apt-get clean
 
+WORKDIR /salty
+
 ENTRYPOINT ["/bin/true"]
 
