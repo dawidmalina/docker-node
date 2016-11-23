@@ -20,6 +20,9 @@ RUN apt-get update \
   && dpkg --configure resolvconf \
   && apt-get install -yf \
 
+  # fix for getty consume 100% cpu
+  && systemctl disable getty@tty1.service \
+
   # cleanup
   && rm -rf /var/lib/apt/lists/* \
   && apt-get autoremove \

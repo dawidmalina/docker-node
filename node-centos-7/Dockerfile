@@ -13,6 +13,9 @@ RUN yum install -y epel-release sudo \
   # fix for systemd
   && yum install -y initscripts \
 
+  # fix for getty consume 100% cpu
+  && systemctl disable getty@tty1.service \
+
   && rm -rf /var/lib/yum/* \
   && yum clean all
 
