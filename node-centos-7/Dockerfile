@@ -4,6 +4,9 @@ ENV container=docker
 
 RUN yum install -y epel-release sudo \
 
+  # fix locale
+  && localedef --force -i en_US -f UTF-8 en_US.UTF-8 \
+
   # install ssh
   && yum install -y openssh-server which openssh-clients \
   && echo 'root:root123' | chpasswd \
