@@ -19,6 +19,7 @@ RUN apt-get update \
   && rm /var/lib/dpkg/info/resolvconf.postinst \
   && dpkg --configure resolvconf \
   && apt-get install -yf \
+  && && apt-mark hold resolvconf \
 
   # fix for getty consume 100% cpu
   && systemctl disable getty@tty1.service \
