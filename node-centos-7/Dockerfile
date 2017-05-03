@@ -12,6 +12,7 @@ RUN yum install -y epel-release sudo \
   && echo 'root:root123' | chpasswd \
   && sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
   && systemctl enable sshd \
+  && touch /etc/selinux/config \
 
   # fix for systemd
   && yum install -y initscripts \
